@@ -7,11 +7,14 @@ export default defineConfig({
     uni(),
   ],
   build: {
-    outDir: 'dist',
+    outDir: 'dist/build/h5',
     assetsDir: 'static',
     rollupOptions: {
       output: {
-        manualChunks: undefined
+        manualChunks: undefined,
+        entryFileNames: 'static/js/[name].[hash].js',
+        chunkFileNames: 'static/js/[name].[hash].js',
+        assetFileNames: 'static/[ext]/[name].[hash].[ext]'
       }
     }
   }
