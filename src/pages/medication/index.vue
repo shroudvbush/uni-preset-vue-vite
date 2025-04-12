@@ -1,12 +1,6 @@
 <template>
   <view class="container">
-    <view class="header">
-      <view class="back-button" @click="goBack">
-        <text class="back-icon">←</text>
-      </view>
-      <text class="page-title">用药提醒</text>
-      <view class="header-placeholder"></view>
-    </view>
+    <page-header title="用药提醒"></page-header>
     
     <view class="content">
       <view class="medication-list" v-if="medications.length > 0">
@@ -56,7 +50,12 @@
 </template>
 
 <script>
+import PageHeader from '@/components/PageHeader.vue'
+
 export default {
+  components: {
+    PageHeader
+  },
   data() {
     return {
       medications: [],
@@ -74,9 +73,6 @@ export default {
     }
   },
   methods: {
-    goBack() {
-      uni.navigateBack();
-    },
     addMedication() {
       if (!this.newMedication.name || !this.newMedication.dosage) {
         uni.showToast({
@@ -144,40 +140,6 @@ export default {
   flex-direction: column;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px;
-  background-color: #fff;
-  position: relative;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.back-button {
-  width: 30px;
-  display: flex;
-  align-items: center;
-}
-
-.back-icon {
-  font-size: 24px;
-  color: #333;
-}
-
-.page-title {
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  flex: 1;
-}
-
-.header-placeholder {
-  width: 30px;
-}
-
 .content {
   flex: 1;
   display: flex;
@@ -194,59 +156,54 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: 15px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
+  background-color: #f8f8f8;
+  border-radius: 12px;
   margin-bottom: 10px;
 }
 
 .medication-info {
   flex: 1;
-  display: flex;
-  justify-content: space-between;
-  padding-right: 15px;
 }
 
 .medication-name {
   font-size: 16px;
   color: #333;
-  font-weight: 500;
+  margin-bottom: 5px;
 }
 
 .medication-dosage {
-  font-size: 16px;
+  font-size: 14px;
   color: #666;
 }
 
 .delete-button {
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  background-color: #ff5252;
-  border-radius: 50%;
+  justify-content: center;
+  margin-left: 15px;
 }
 
 .delete-icon {
-  color: #fff;
   font-size: 20px;
-  line-height: 20px;
+  color: #ff6b6b;
 }
 
 .empty-state {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px 0;
+  height: 100px;
 }
 
 .empty-text {
-  font-size: 16px;
+  font-size: 14px;
   color: #999;
 }
 
 .input-form {
-  background-color: #f9f9f9;
+  background-color: #f8f8f8;
   border-radius: 12px;
   padding: 15px;
   margin-bottom: 20px;
@@ -254,56 +211,54 @@ export default {
 
 .form-row {
   display: flex;
-  justify-content: space-between;
+  gap: 15px;
 }
 
 .input-group {
   flex: 1;
-  margin: 0 5px;
 }
 
 .input-label {
-  display: block;
-  font-size: 16px;
+  font-size: 14px;
   color: #333;
   margin-bottom: 8px;
+  display: block;
 }
 
 .input-field {
   width: 100%;
-  height: 45px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 0 10px;
+  height: 40px;
   background-color: #fff;
-  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 0 12px;
+  font-size: 14px;
+  border: 1px solid #e0e0e0;
 }
 
 .action-buttons {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  gap: 15px;
+}
+
+.add-button, .delete-all-button {
+  flex: 1;
+  height: 45px;
+  border-radius: 22.5px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .add-button {
-  height: 45px;
-  background-color: #1e88e5;
-  color: #fff;
-  border-radius: 22.5px;
-  font-size: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: #6C63FF;
+  color: white;
+  border: none;
 }
 
 .delete-all-button {
-  height: 45px;
-  background-color: #f5f5f5;
-  color: #ff5252;
-  border-radius: 22.5px;
-  font-size: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: #fff;
+  color: #ff6b6b;
+  border: 1px solid #ff6b6b;
 }
 </style> 

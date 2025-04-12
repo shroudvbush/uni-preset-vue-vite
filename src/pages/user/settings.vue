@@ -1,12 +1,6 @@
 <template>
   <view class="container">
-    <view class="header">
-      <view class="back-button" @click="goBack">
-        <text class="back-icon">←</text>
-      </view>
-      <text class="page-title">设置</text>
-      <view class="header-placeholder"></view>
-    </view>
+    <page-header title="设置"></page-header>
     
     <view class="content">
       <view class="menu-list">
@@ -31,14 +25,18 @@
 </template>
 
 <script>
+import TabBar from '@/components/TabBar.vue'
+import PageHeader from '@/components/PageHeader.vue'
+
 export default {
+  components: {
+    TabBar,
+    PageHeader
+  },
   data() {
     return {}
   },
   methods: {
-    goBack() {
-      uni.navigateBack();
-    },
     navigateTo(url) {
       uni.navigateTo({
         url: url
@@ -51,44 +49,11 @@ export default {
 <style>
 .container {
   padding: 0;
-  width: 100%;
   min-height: 100vh;
-  background-color: #ffffff;
-  box-sizing: border-box;
+  background-color: #f5f7fa;
+  padding-bottom: 70px; /* 为底部导航栏留出空间 */
   display: flex;
   flex-direction: column;
-}
-
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px;
-  background-color: #fff;
-  position: relative;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.back-button {
-  width: 30px;
-  display: flex;
-  align-items: center;
-}
-
-.back-icon {
-  font-size: 24px;
-  color: #333;
-}
-
-.page-title {
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  flex: 1;
-}
-
-.header-placeholder {
-  width: 30px;
 }
 
 .content {

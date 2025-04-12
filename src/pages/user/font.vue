@@ -1,12 +1,6 @@
 <template>
   <view class="container">
-    <view class="header">
-      <view class="back-button" @click="goBack">
-        <text class="back-icon">←</text>
-      </view>
-      <text class="page-title">字体大小设置</text>
-      <view class="header-placeholder"></view>
-    </view>
+    <page-header title="字体大小设置"></page-header>
     
     <view class="content">
       <view class="font-preview">
@@ -40,7 +34,12 @@
 </template>
 
 <script>
+import PageHeader from '@/components/PageHeader.vue'
+
 export default {
+  components: {
+    PageHeader
+  },
   data() {
     return {
       fontSize: 16,
@@ -48,9 +47,6 @@ export default {
     }
   },
   methods: {
-    goBack() {
-      uni.navigateBack();
-    },
     changeSize(e) {
       this.sliderValue = e.detail.value;
       this.fontSize = e.detail.value;
@@ -70,94 +66,49 @@ export default {
   flex-direction: column;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px;
-  background-color: #fff;
-  position: relative;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.back-button {
-  width: 30px;
-  display: flex;
-  align-items: center;
-}
-
-.back-icon {
-  font-size: 24px;
-  color: #333;
-}
-
-.page-title {
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  flex: 1;
-}
-
-.header-placeholder {
-  width: 30px;
-}
-
 .content {
   flex: 1;
-  display: flex;
-  flex-direction: column;
   padding: 20px;
 }
 
 .font-preview {
-  height: 150px;
-  background-color: #f9f9f9;
-  border-radius: 15px;
+  background-color: #f8f8f8;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
 }
 
 .preview-text {
   color: #333;
-  line-height: 1.5;
+  text-align: center;
 }
 
 .size-control {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .slider-container {
   display: flex;
   align-items: center;
-  padding: 0 15px;
+  padding: 0 20px;
 }
 
 .size-label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-}
-
-.size-label:first-child {
-  font-size: 12px;
-}
-
-.size-label:last-child {
-  font-size: 20px;
+  font-size: 16px;
+  color: #333;
+  margin: 0 10px;
 }
 
 .tip-container {
-  padding: 15px;
-  display: flex;
-  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .tip-text {
   font-size: 14px;
-  color: #999;
+  color: #666;
 }
 </style> 

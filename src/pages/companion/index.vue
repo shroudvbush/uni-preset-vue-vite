@@ -1,12 +1,6 @@
 <template>
   <view class="container">
-    <view class="header">
-      <view class="back-button" @click="goBack">
-        <text class="back-icon"></text>
-      </view>
-      <text class="page-title"></text>
-      <view class="header-placeholder"></view>
-    </view>
+    <page-header title="智能陪伴"></page-header>
     
     <view class="content">
       <view class="chat-container">
@@ -50,7 +44,12 @@
 </template>
 
 <script>
+import PageHeader from '@/components/PageHeader.vue'
+
 export default {
+  components: {
+    PageHeader
+  },
   data() {
     return {
       inputText: '',
@@ -59,9 +58,6 @@ export default {
     }
   },
   methods: {
-    goBack() {
-      uni.navigateBack();
-    },
     sendMessage() {
       if (!this.inputText.trim()) return;
       
@@ -133,165 +129,114 @@ export default {
   flex-direction: column;
 }
 
-
-.back-button {
-  width: 30px;
-  display: flex;
-  align-items: center;
-}
-
-.back-icon {
-  font-size: 24px;
-  color: #333;
-}
-
-.page-title {
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  flex: 1;
-}
-
-.header-placeholder {
-  width: 30px;
-}
-
 .content {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 15px;
-  height: calc(100vh - 58px);
+  padding: 20px;
+  padding-bottom: 100px;
 }
 
 .chat-container {
   flex: 1;
-  overflow-y: auto;
-  margin-bottom: 15px;
-}
-
-.ai-message-box {
   display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-  padding: 10px;
-  background-color: #f0f2f5;
-  border-radius: 18px;
-}
-
-.ai-message {
-  background-color: #fff;
-  padding: 15px;
-  border-radius: 18px;
-  max-width: 80%;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  flex-direction: column;
+  gap: 20px;
 }
 
 .message-list {
   display: flex;
   flex-direction: column;
+  gap: 15px;
 }
 
 .message-item {
-  margin-bottom: 15px;
   display: flex;
-  flex-direction: column;
-}
-
-.user-message {
-  align-items: flex-end;
-}
-
-.ai-message {
-  align-items: flex-start;
+  margin-bottom: 10px;
 }
 
 .message-content {
-  padding: 12px 15px;
-  border-radius: 18px;
-  max-width: 80%;
-  font-size: 16px;
+  max-width: 70%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 14px;
   line-height: 1.4;
+}
+
+.user-message {
+  justify-content: flex-end;
 }
 
 .user-message .message-content {
   background-color: #6C63FF;
-  color: #fff;
-  border-bottom-right-radius: 5px;
+  color: white;
+  border-radius: 12px 12px 0 12px;
+}
+
+.ai-message {
+  justify-content: flex-start;
 }
 
 .ai-message .message-content {
-  background-color: #fff;
+  background-color: white;
   color: #333;
-  border-bottom-left-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  border-radius: 12px 12px 12px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .input-area {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  padding: 15px 20px;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
 }
 
 .input-container {
   display: flex;
-  height: 50px;
-  background-color: #fff;
-  border-radius: 25px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  overflow: hidden;
-  padding-left: 15px;
   align-items: center;
+  background-color: #f5f7fa;
+  border-radius: 24px;
+  padding: 8px 15px;
+  margin-bottom: 10px;
 }
 
 .message-input {
   flex: 1;
-  height: 100%;
-  font-size: 16px;
-  border: none;
+  height: 36px;
+  font-size: 14px;
+  background: transparent;
 }
 
 .send-button {
-  width: 60px;
-  height: 36px;
-  background-color: #f0f0f0;
+  padding: 6px 12px;
   border-radius: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: #e0e0e0;
   margin-left: 10px;
-  will-change: auto;
-  transform: translateZ(0);
-}
-
-.send-icon {
-  color: #999;
-  font-size: 14px;
 }
 
 .send-button.active {
-  background-color: #1e88e5;
+  background-color: #6C63FF;
 }
 
-.send-button.active .send-icon {
+.send-icon {
+  font-size: 14px;
   color: #fff;
 }
 
 .voice-container {
-  height: 50px;
-  background-color: #fff;
-  border-radius: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  height: 36px;
+  background-color: #f5f7fa;
+  border-radius: 18px;
 }
 
 .voice-text {
   font-size: 14px;
   color: #666;
-  will-change: auto;
-  transform: translateZ(0);
 }
 </style> 
