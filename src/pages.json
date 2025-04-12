@@ -1,0 +1,147 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/login/index",
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/community/index",
+			"style": {
+				"navigationBarTitleText": "社区"
+			}
+		},
+		{
+			"path": "pages/community/search",
+			"style": {
+				"navigationBarTitleText": "搜索"
+			}
+		},
+		{
+			"path": "pages/user/index",
+			"style": {
+				"navigationBarTitleText": "个人中心"
+			}
+		},
+		{
+			"path": "pages/diagnosis/index",
+			"style": {
+				"navigationBarTitleText": "智能诊断"
+			}
+		},
+		{
+			"path": "pages/companion/index",
+			"style": {
+				"navigationBarTitleText": "智能陪伴"
+			}
+		},
+		{
+			"path": "pages/health-records/index",
+			"style": {
+				"navigationBarTitleText": "健康档案"
+			}
+		},
+		{
+			"path": "pages/medication/index",
+			"style": {
+				"navigationBarTitleText": "用药提醒"
+			}
+		},
+		{
+			"path": "pages/user/guardian",
+			"style": {
+				"navigationBarTitleText": "监护人绑定"
+			}
+		},
+		{
+			"path": "pages/user/settings",
+			"style": {
+				"navigationBarTitleText": "设置"
+			}
+		},
+		{
+			"path": "pages/user/notification",
+			"style": {
+				"navigationBarTitleText": "通知设置"
+			}
+		},
+		{
+			"path": "pages/user/font",
+			"style": {
+				"navigationBarTitleText": "字体大小设置"
+			}
+		},
+		{
+			"path": "pages/user/account",
+			"style": {
+				"navigationBarTitleText": "账号设置"
+			}
+		}
+	],
+	"tabBar": {
+		"color": "#333333",
+		"selectedColor": "#6C63FF",
+		"backgroundColor": "#FFFFFF",
+		"borderStyle": "black",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"text": "首页",
+				"iconPath": "static/tabbar/home.png",
+				"selectedIconPath": "static/tabbar/home-active.png"
+			},
+			{
+				"pagePath": "pages/community/index",
+				"text": "社区",
+				"iconPath": "static/tabbar/community.png",
+				"selectedIconPath": "static/tabbar/community-active.png"
+			},
+			{
+				"pagePath": "pages/user/index",
+				"text": "个人中心",
+				"iconPath": "static/tabbar/user.png",
+				"selectedIconPath": "static/tabbar/user-active.png"
+			}
+		]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "医影随护",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		"app-plus": {
+			"titleNView": {
+				"backgroundColor": "#F8F8F8",
+				"titleText": "医影随护",
+				"titleColor": "#000000"
+			}
+		}
+	},
+	"h5": {
+		"devServer": {
+			"port": 8080,
+			"disableHostCheck": true
+		},
+		"router": {
+			"mode": "hash"
+		},
+		"optimization": {
+			"treeShaking": {
+				"enable": true
+			}
+		},
+		"async": {
+			"loading": "AsyncLoading",
+			"error": "AsyncError",
+			"delay": 200,
+			"timeout": 3000
+		}
+	}
+}
