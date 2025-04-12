@@ -1,11 +1,6 @@
 <template>
   <view class="container">
-    <view class="header">
-      <view class="back-button" @click="goBack">
-        <text class="back-icon">←</text>
-      </view>
-      <text class="page-title">智能诊断</text>
-    </view>
+    <page-header title="智能诊断"></page-header>
     
     <view class="content">
       <view class="input-label">请输入你可能有的症状</view>
@@ -49,7 +44,12 @@
 </template>
 
 <script>
+import PageHeader from '@/components/PageHeader.vue'
+
 export default {
+  components: {
+    PageHeader
+  },
   data() {
     return {
       symptomText: '',
@@ -57,9 +57,6 @@ export default {
     }
   },
   methods: {
-    goBack() {
-      uni.navigateBack();
-    },
     handleVoiceInput() {
       uni.showToast({
         title: '启动语音输入...',
@@ -107,35 +104,6 @@ export default {
   min-height: 100vh;
   background-color: #f5f7fa;
   box-sizing: border-box;
-}
-
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px;
-  background-color: #fff;
-  position: relative;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  width: 100%;
-}
-
-.back-button {
-  padding: 2px 15px 5px 0;
-  display: flex;
-  align-items: center;
-}
-
-.back-icon {
-  font-size: 24px;
-  color: #333;
-}
-
-.page-title {
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  flex: 1;
 }
 
 .content {

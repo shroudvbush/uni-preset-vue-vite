@@ -1,12 +1,6 @@
 <template>
   <view class="container">
-    <view class="header">
-      <view class="back-button" @click="goBack">
-        <text class="back-icon">←</text>
-      </view>
-      <text class="page-title">监护人绑定</text>
-      <view class="header-placeholder"></view>
-    </view>
+    <page-header title="监护人绑定"></page-header>
     
     <view class="content">
       <!-- 未绑定状态 -->
@@ -64,7 +58,12 @@
 </template>
 
 <script>
+import PageHeader from '@/components/PageHeader.vue'
+
 export default {
+  components: {
+    PageHeader
+  },
   data() {
     return {
       phoneNumber: '',
@@ -89,9 +88,6 @@ export default {
     }
   },
   methods: {
-    goBack() {
-      uni.navigateBack();
-    },
     toggleDataShare(e) {
       this.isDataShareEnabled = e.detail.value;
       
@@ -206,39 +202,6 @@ export default {
   flex-direction: column;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px;
-  background-color: #fff;
-  position: relative;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  width: 100%;
-}
-
-.back-button {
-  width: 30px;
-  display: flex;
-  align-items: center;
-}
-
-.back-icon {
-  font-size: 24px;
-  color: #333;
-}
-
-.page-title {
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  flex: 1;
-}
-
-.header-placeholder {
-  width: 30px;
-}
-
 .content {
   flex: 1;
   display: flex;
@@ -274,74 +237,69 @@ export default {
 .bind-button {
   width: 100%;
   height: 50px;
-  background-color: #1e88e5;
+  background-color: #6C63FF;
   color: white;
-  border-radius: 10px;
-  font-size: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .bind-button[disabled] {
   background-color: #cccccc;
-  color: #ffffff;
 }
 
 .description {
-  margin-bottom: 30px;
+  margin: 20px 0;
 }
 
 .desc-text {
   font-size: 14px;
-  color: #999;
+  color: #666;
   line-height: 1.5;
 }
 
 .bound-info {
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  padding: 20px;
   margin-bottom: 20px;
 }
 
 .bound-title {
   font-size: 16px;
-  color: #1e88e5;
+  color: #333;
   margin-bottom: 15px;
-  display: block;
 }
 
 .bound-phone {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
-  background-color: #f5f5f5;
-  border-radius: 10px;
 }
 
 .phone-text {
-  font-size: 16px;
+  font-size: 18px;
   color: #333;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .delete-icon {
   width: 24px;
   height: 24px;
-  border-radius: 50%;
-  background-color: #ff5252;
-  color: white;
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-size: 16px;
+  justify-content: center;
+  color: #999;
+  font-size: 20px;
 }
 
 .toggle-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .toggle-label {
@@ -350,6 +308,6 @@ export default {
 }
 
 .toggle-switch {
-  transform: scale(0.8);
+  transform: scale(0.9);
 }
 </style> 
