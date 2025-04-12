@@ -9,6 +9,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  workflows: write
 
 concurrency:
   group: "pages"
@@ -28,13 +29,13 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build
-        run: npm run build
+        run: npm run build:h5
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: './dist'
+          path: './dist/build/h5'
 
   deploy:
     environment:

@@ -6,4 +6,13 @@ export default defineConfig({
   plugins: [
     uni(),
   ],
+  build: {
+    outDir: 'dist',
+    assetsDir: 'static',
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    }
+  }
 })
