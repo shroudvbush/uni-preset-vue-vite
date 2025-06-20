@@ -1,0 +1,1 @@
+import{r as a}from"./request.BnSz9hlZ.js";function t(t){return a.get("/api/medical/hospitals",{params:t})}function e(t){return a.post("/api/medical/appointment",t)}function i(t){return a.get("/api/medical/appointments",{params:t})}export{t as a,i as g,e as m};
