@@ -1,5 +1,5 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	"pages": [ 
 		{
 			"path": "pages/login/index",
 			"style": {
@@ -82,6 +82,66 @@
 			"path": "pages/user/account",
 			"style": {
 				"navigationBarTitleText": "账号设置"
+			}
+		},
+		{
+			"path": "pages/family/index",
+			"style": {
+				"navigationBarTitleText": "家庭成员"
+			}
+		},
+		{
+			"path": "pages/family/add",
+			"style": {
+				"navigationBarTitleText": "添加家庭成员"
+			}
+		},
+		{
+			"path": "pages/family/detail",
+			"style": {
+				"navigationBarTitleText": "家庭成员详情"
+			}
+		},
+		{
+			"path": "pages/medical/index",
+			"style": {
+				"navigationBarTitleText": "医疗服务"
+			}
+		},
+		{
+			"path": "pages/medical/hospital",
+			"style": {
+				"navigationBarTitleText": "医院列表"
+			}
+		},
+		{
+			"path": "pages/medical/appointment",
+			"style": {
+				"navigationBarTitleText": "预约挂号"
+			}
+		},
+		{
+			"path": "pages/medical/consultation",
+			"style": {
+				"navigationBarTitleText": "在线问诊"
+			}
+		},
+		{
+			"path": "pages/medical/reports",
+			"style": {
+				"navigationBarTitleText": "检查报告"
+			}
+		},
+		{
+			"path": "pages/health/analysis",
+			"style": {
+				"navigationBarTitleText": "健康分析"
+			}
+		},
+		{
+			"path": "pages/health/report",
+			"style": {
+				"navigationBarTitleText": "健康报告"
 			}
 		}
 	],
