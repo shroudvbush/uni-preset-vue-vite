@@ -89,7 +89,7 @@
 
 <script>
 import PageHeader from '@/components/PageHeader.vue'
-import { getMedicalReports, shareMedicalReport } from '@/api/medical.js'
+import { getMedicalReports } from '@/api/medical.js'
 
 export default {
   components: {
@@ -246,18 +246,22 @@ export default {
     
     async shareToDoctor(report) {
       try {
-        const result = await shareMedicalReport({
-          reportId: report.id,
-          shareType: 'doctor',
-          shareTarget: 'all'
+        // const result = await shareMedicalReport({
+        //   reportId: report.id,
+        //   shareType: 'doctor',
+        //   shareTarget: 'all'
+        // })
+        // 
+        // if (result.code === 0) {
+        //   uni.showToast({
+        //     title: '分享成功',
+        //     icon: 'success'
+        //   })
+        // }
+        uni.showToast({
+          title: '模拟：分享成功',
+          icon: 'success'
         })
-        
-        if (result.code === 0) {
-          uni.showToast({
-            title: '分享成功',
-            icon: 'success'
-          })
-        }
       } catch (error) {
         uni.showToast({
           title: '分享失败',
@@ -268,18 +272,22 @@ export default {
     
     async shareToFamily(report) {
       try {
-        const result = await shareMedicalReport({
-          reportId: report.id,
-          shareType: 'family',
-          shareTarget: 'all'
+        // const result = await shareMedicalReport({
+        //   reportId: report.id,
+        //   shareType: 'family',
+        //   shareTarget: 'all'
+        // })
+        // 
+        // if (result.code === 0) {
+        //   uni.showToast({
+        //     title: '分享成功',
+        //     icon: 'success'
+        //   })
+        // }
+        uni.showToast({
+          title: '模拟：分享成功',
+          icon: 'success'
         })
-        
-        if (result.code === 0) {
-          uni.showToast({
-            title: '分享成功',
-            icon: 'success'
-          })
-        }
       } catch (error) {
         uni.showToast({
           title: '分享失败',
